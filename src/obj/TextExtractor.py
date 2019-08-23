@@ -17,7 +17,7 @@ class TextExtractor :
             self.img = cv2.imread(imgFile)
             self.img_org = self.img.copy(); 
             self.AutoScaleImage()
-            self.minConfidence = 0.85
+            self.minConfidence = 0.5
             self.minOverlap = 0.75
             self.padding = 0.00; 
             self.imageH, self.imageW = self.img.shape[:2]
@@ -174,3 +174,4 @@ class TextExtractor :
             self.extractedText = self.BuildTextDescriptors(boxesFlt)
         except NameError : 
             raise Exception("Text Not extracted yet")
+    
